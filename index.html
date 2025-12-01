@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Ecommerce - Home</title>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-THQK7645');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THQK7645"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <h1>My Ecommerce Store</h1>
+    <nav>
+      <a href="index.html" class="navlink">Home</a>
+      <a href="contact.html" class="navlink">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Featured Products</h2>
+      <p>Pick something you love — click <em>Add to Cart</em> to simulate a conversion event tracked by GTM.</p>
+    </section>
+
+    <section id="products" class="products-grid">
+      <!-- Product cards -->
+      <article class="product" data-id="P001" data-name="Classic Watch" data-price="79.99">
+        <img src="https://via.placeholder.com/220x140?text=Watch" alt="Classic Watch" />
+        <h3>Classic Watch</h3>
+        <p class="price">₹79.99</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </article>
+
+      <article class="product" data-id="P002" data-name="Headphones Pro" data-price="129.99">
+        <img src="https://via.placeholder.com/220x140?text=Headphones" alt="Headphones Pro" />
+        <h3>Headphones Pro</h3>
+        <p class="price">₹129.99</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </article>
+
+      <article class="product" data-id="P003" data-name="Leather Wallet" data-price="39.99">
+        <img src="https://via.placeholder.com/220x140?text=Wallet" alt="Leather Wallet" />
+        <h3>Leather Wallet</h3>
+        <p class="price">₹39.99</p>
+        <button class="btn add-to-cart">Add to Cart</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> My Ecommerce — Demo site</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // push a simple page view event to dataLayer for GTM
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'pageView',
+      page: { path: '/', title: document.title }
+    });
+  </script>
+</body>
+</html>
