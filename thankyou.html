@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You</title>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-THQK7645');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THQK7645"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <h1>Thank You!</h1>
+    <nav>
+      <a href="index.html" class="navlink">Home</a>
+      <a href="contact.html" class="navlink">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="thankyou-card">
+      <h2>Thanks — we received your message!</h2>
+      <p>We'll respond to your email shortly.</p>
+
+      <div class="submitted-info" id="submittedInfo" style="display:none;">
+        <h3>Submitted data (demo)</h3>
+        <pre id="formDataPre"></pre>
+      </div>
+
+      <a class="btn" href="index.html">Back to Home</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year3"></span> My Ecommerce — Demo site</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // page view push for thankyou
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'pageView',
+      page: { path: '/thankyou', title: document.title }
+    });
+
+    // optional: show submitted data if passed in query string (demo)
+    (function showSubmittedData() {
+      const params = new URLSearchParams(location.search);
+      if (params.has('name') || params.has('email') || params.has('message')) {
+        const infoEl = document.getElementById('submittedInfo');
+        const pre = document.getElementById('formDataPre');
+        const name = params.get('name') || '';
+        const email = params.get('email') || '';
+        const message = params.get('message') || '';
+        pre.textContent = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+        infoEl.style.display = 'block';
+      }
+    })();
+  </script>
+</body>
+</html>
