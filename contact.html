@@ -32,33 +32,56 @@
   <main class="container">
     <section class="contact-card">
       <h2>Send us a message</h2>
+
+      <!-- Contact Form -->
       <form id="contactForm">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required />
+        <label>Name</label>
+        <input type="text" name="name" required />
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+        <label>Email</label>
+        <input type="email" name="email" required />
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <label>Message</label>
+        <textarea name="message" rows="5" required></textarea>
 
         <button type="submit" class="btn">Submit</button>
       </form>
+
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year2"></span> My Ecommerce — Demo site</p>
+    <p>© <span id="year"></span> My Ecommerce — Demo site</p>
   </footer>
 
   <script src="script.js"></script>
+
   <script>
-    // page view push for contact page
+    // Page view event
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      event: 'pageView',
-      page: { path: '/contact', title: document.title }
+      event: "pageView",
+      page: { path: "/contact", title: document.title }
+    });
+
+    // Form submission → GTM + redirect to your website
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = new FormData(this);
+      const name = form.get("name");
+      const email = form.get("email");
+
+      // GTM event push
+      window.dataLayer.push({
+        event: "contactSubmit",
+        contact: { name: name, email: email }
+      });
+
+      // Redirect to your website
+      window.location.href = "https://tvbindushree.github.io/mazenetlinker/";
     });
   </script>
+
 </body>
 </html>
